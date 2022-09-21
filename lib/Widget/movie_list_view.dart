@@ -5,9 +5,10 @@ import 'package:moviez_streaming/Model/movie_model.dart';
 Widget movieListView(double height, double width, ScrollController controller) {
   return Container(
     width: width,
-    padding: EdgeInsets.symmetric(vertical: height * 0.03),
+    padding:
+        EdgeInsets.symmetric(vertical: height * 0.03, horizontal: width * 0.03),
     child: ListView.builder(
-      physics: AlwaysScrollableScrollPhysics(),
+      physics: const AlwaysScrollableScrollPhysics(),
       controller: controller,
       shrinkWrap: true,
       itemBuilder: (context, index) {
@@ -24,13 +25,11 @@ Widget movieListView(double height, double width, ScrollController controller) {
                 height: height * 0.15,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                child: Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      movie.imageUrl,
-                      fit: BoxFit.cover,
-                    ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    movie.imageUrl,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

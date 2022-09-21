@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 bottom: bodyWidth * 0.05),
             child: Column(
               children: [
-                appBar(bodyHeight, bodyWidth),
+                appBar(context, bodyHeight, bodyWidth),
                 movieSlider(bodyHeight, bodyWidth),
                 movieListView(bodyHeight, bodyWidth, controller)
               ],
